@@ -1,26 +1,24 @@
 
+# System Control - PyQt5 Application
 
-# System Control - PyQt5
-
-A desktop application built using PyQt5 to control system shutdown and restart with a user-friendly GUI. The app also plays an animated GIF in the background to enhance the visual experience.
+A desktop application built using PyQt5 for controlling system actions like shutdown, restart, and cancel. The application features an interactive UI with a background GIF and custom-styled buttons.
 
 ## Features
 
-- **Shutdown and Restart:** Allows the user to shut down or restart the system with a 7-second delay.
-- **Cancel Option:** Provides an option to cancel any pending actions.
-- **Customizable Buttons:** Stylish buttons with hover and click effects.
-- **Animated Background:** Displays a GIF as the background for a visually dynamic interface.
-- **Responsive Layout:** The app is designed to be responsive, adjusting to different screen sizes.
+- **Background GIF:** A GIF that plays as the background for the application.
+- **Shutdown & Restart:** Allows the user to shut down or restart the system with a 7-second delay.
+- **Cancel:** Cancels the current operation and closes the application.
+- **Hover Effects:** Buttons change style when hovered to provide a dynamic user experience.
 
 ## Requirements
 
 - Python 3.x
 - PyQt5
 
-To install the required dependencies, run the following command:
+You can install the required library using pip:
 
 ```bash
-pip install PyQt5
+pip install pyqt5
 
 How to Run
 
@@ -38,23 +36,37 @@ python system_control.py
 
 Code Explanation
 
-Window and Layout Setup
+User Interface
 
-The main window is set with a fixed size of 300x300 and a background GIF. The layout includes a title label and three buttons: Shutdown, Restart, and Cancel.
+The UI is built using PyQt5 and contains the following:
 
-Animated GIF Background
+Title Label: Displays "Choose an action" centered at the top of the window.
 
-The QMovie class is used to load and play an animated GIF in the background. The setMovie method sets the GIF, and it starts automatically.
+Action Buttons: Includes buttons for shutdown, restart, and cancel. These buttons change style when hovered.
 
-Buttons and Interactions
+Background GIF: A GIF is displayed in the background using QMovie.
 
-Each button is created using a custom create_button method. The buttons change their style on hover and click, providing a dynamic user experience. The shutdown, restart, and cancel methods perform the respective actions.
 
-Shutdown and Restart
+Buttons and Styling
 
-The shutdown and restart functions use the os.system() command to initiate system actions with a 7-second delay.
+The buttons are styled using CSS and feature hover effects that change the background color. The buttons are connected to their respective functions:
 
-Cancel
+Shutdown: Initiates system shutdown with a 7-second delay.
 
-The cancel button stops any ongoing operation and closes the window.
+Restart: Initiates system restart with a 7-second delay.
+
+Cancel: Cancels any operation and closes the application.
+
+
+System Actions
+
+The shutdown and restart actions are handled using the os.system() command to execute system shutdown or restart commands.
+
+
+Window Setup
+
+The window is set to a fixed size of 300x300 pixels.
+
+The background color and transparency are customized with CSS.
+
 
