@@ -1,46 +1,60 @@
 
-![shutdown](https://github.com/user-attachments/assets/a960ec4e-8edd-48d9-b518-d2fbe3eb68cf)
+
+# System Control - PyQt5
+
+A desktop application built using PyQt5 to control system shutdown and restart with a user-friendly GUI. The app also plays an animated GIF in the background to enhance the visual experience.
+
+## Features
+
+- **Shutdown and Restart:** Allows the user to shut down or restart the system with a 7-second delay.
+- **Cancel Option:** Provides an option to cancel any pending actions.
+- **Customizable Buttons:** Stylish buttons with hover and click effects.
+- **Animated Background:** Displays a GIF as the background for a visually dynamic interface.
+- **Responsive Layout:** The app is designed to be responsive, adjusting to different screen sizes.
+
+## Requirements
+
+- Python 3.x
+- PyQt5
+
+To install the required dependencies, run the following command:
+
+```bash
+pip install PyQt5
+
+How to Run
+
+1. Clone or download the project.
+
+
+2. Open a terminal and navigate to the project directory.
+
+
+3. Run the script:
 
 
 
+python system_control.py
 
+Code Explanation
 
-1.Library Imports:
-   - The necessary libraries for building the user interface and system control have been imported.
+Window and Layout Setup
 
-2.SystemControl Class:
-   - This class inherits from QWidget and is responsible for creating the user interface.
+The main window is set with a fixed size of 300x300 and a background GIF. The layout includes a title label and three buttons: Shutdown, Restart, and Cancel.
 
-3. __init__ Method:
-   - This is the main constructor that calls the parent class constructor (super().__init__) and invokes the initUI() method.
+Animated GIF Background
 
-4. initUI Method:
-   - Here, the initial UI settings are configured:
-     - The window title and size are set.
-     - A QLabel is added to display a GIF animation in the background.
-     - The GIF is loaded and displayed.
-     - A QVBoxLayout for vertically arranging the widgets is created.
-     - Titles and buttons are generated and added to the layout.
+The QMovie class is used to load and play an animated GIF in the background. The setMovie method sets the GIF, and it starts automatically.
 
-5.create_button Method:
-   - This method creates buttons with a specific style and a callback function.
-   - Additionally, events are defined to change the button style when the mouse enters or leaves.
+Buttons and Interactions
 
-6.change_button_style Method:
-   - This method manages the appearance changes of the buttons during mouse movement.
+Each button is created using a custom create_button method. The buttons change their style on hover and click, providing a dynamic user experience. The shutdown, restart, and cancel methods perform the respective actions.
 
-7. Button Functions:
-   - Shutdown:Clicking this button shows a message that the system will shut down in 7 seconds, then issues the shutdown command.
-   - Restart: Functions similarly to the shutdown button but restarts the system.
-   - Cancel: Clicking this button displays a message and closes the window.
+Shutdown and Restart
 
-8. Running the Program:
-   - Finally, the program is executed using QApplication, and the SystemControl class is displayed.
+The shutdown and restart functions use the os.system() command to initiate system actions with a 7-second delay.
 
-Key Points:
-- Events and Callbacks: Using connect to link events to specific functions.
-- Interactive UI: Improved user experience through changes and animations.
-- System Interaction: Commands can be executed using os.system.
+Cancel
 
+The cancel button stops any ongoing operation and closes the window.
 
-![icon](https://github.com/user-attachments/assets/dfb20dc1-e2d0-4606-a1e4-1deef3faad9e)
