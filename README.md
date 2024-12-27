@@ -69,4 +69,3 @@ The window is set to a fixed size of 300x300 pixels.
 
 The background color and transparency are customized with CSS.
 
-
